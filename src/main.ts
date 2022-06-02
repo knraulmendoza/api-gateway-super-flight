@@ -6,7 +6,7 @@ import { TimeOutInterceptor } from './common/interceptors/timeout.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix('api');
+  app.setGlobalPrefix('api/v2');
   app.useGlobalFilters(new AllExepctionFilter());
   app.useGlobalInterceptors(new TimeOutInterceptor());
   const options = new DocumentBuilder()
